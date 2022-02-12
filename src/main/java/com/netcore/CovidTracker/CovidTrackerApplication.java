@@ -32,6 +32,7 @@ public class CovidTrackerApplication {
 		String line = "";
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("src/main/resources/covid_vaccine_statewise.csv"));
+			br.readLine();
 			while((line = br.readLine()) != null) {
 				String[] data = line.split(",");
 				if(data.length == 18) {
