@@ -21,7 +21,7 @@ public class CovidTrackerService {
 	
 	public String getTotalWastageByStateAndDate(String state, String date) {
 		String updatedDate = date.substring(0, 6) + date.substring(8);
-		List<CovidTracker> allRecords = covidTrackerRepository.findAll();
+		List<CovidTracker> allRecords = (List<CovidTracker>) covidTrackerRepository.findAll();
 		long totalWastage = 0L;
 		
 		int i=0;
@@ -38,7 +38,7 @@ public class CovidTrackerService {
 	}
 
 	public List<CovidTracker> getAll() {
-		return covidTrackerRepository.findAll();
+		return (List<CovidTracker>) covidTrackerRepository.findAll();
 	}
 
 	public CovidTracker save(CovidTracker covidTracker) {
